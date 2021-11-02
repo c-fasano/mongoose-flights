@@ -37,9 +37,15 @@ function show(req, res) {
   })
 }
 
+function createTicket(req, res) {
+  console.log("Creating review associated with", req.params.id)
+  console.log(req.body)
+}
+
 export {
   index,
   newFlight as new,
   create,
-  show
+  show,
+  createTicket
 }
