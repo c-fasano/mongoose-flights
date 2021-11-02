@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>New Flight</title>
+<%- include("../partials/header") %> 
+
+<link rel="stylesheet" href="">
+
+<%- include("../partials/nav") %> 
 </head>
-<body>
+<main>
   <h1>Enter a new Flight</h1>
   <form action="/flights" method="POST">
     <label>airline:
@@ -33,5 +31,6 @@
     </label><br>
     <button type="submit">Add Flight</button>
   </form>
-</body>
-</html>
+</main>
+
+<%- include("../partials/footer")  %> 

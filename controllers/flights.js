@@ -17,6 +17,9 @@ function newFlight(req, res) {
 }
 
 function create (req, res) {
+  for (let key in req.body) {
+    if (req.body[key] === '') delete req.body[key]
+  }  
   const flight = new Flight (req.body)
   flight.save(function(err) {
     if (err) {
@@ -26,9 +29,17 @@ function create (req, res) {
   })
 }
 
+function show(req, res) {
+  Flight.findById(req.params.id, function(error, flight) {
+    res.render("flights/show", {
+      flight, error, title: "Flight Details"
+    })
+  })
+}
 
 export {
   index,
   newFlight as new,
-  create
+  create,
+  show
 }

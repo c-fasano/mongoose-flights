@@ -7,13 +7,13 @@ const ticketSchema = new Schema ({
   price: {type: Number, min: 0},
 })
 
+const defDate = new Date(new Date().setFullYear(new Date().getFullYear() + 1))
+
 const flightSchema = new Schema ({
-  airline: String, //enum
-    enum: ["American", "Southwest", "United"],
-  airport: String, //enum
-    enum:["AUS", "DFW", "DEN", "LAX", "SAN"],
+  airline: { type: String, enum: ["American", "Southwest", "United"]},
+  airport: { type: String, enum:["AUS", "DFW", "DEN", "LAX", "SAN"]},//enum
   flightNo: {type: Number, min: 10, max: 9999},
-  departs: {type: Date, default: Date.now},
+  departs: {type: Date, default: defDate + 1},
   tickets: [ticketSchema],
 })
 
