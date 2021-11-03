@@ -38,8 +38,14 @@ function show(req, res) {
 }
 
 function createTicket(req, res) {
-  console.log("Creating review associated with", req.params.id)
-  console.log(req.body)
+  console.log("Creating ticket associated with", req.params.id)
+  // console.log(req.body)
+  Flight.findById(req.params.id, function(error, flight) {
+    flight.tickets.push(req.body)
+    flight.save(function(error) {
+      res.redirect(`/flights/${flight._id}`)
+    })
+  })
 }
 
 export {
