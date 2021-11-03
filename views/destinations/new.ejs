@@ -13,6 +13,14 @@
     <% }) %> 
     </select>
   </p>
+  <form 
+    id="add-dest"
+    action="/destinations"
+    method="POST">
+    <label for="dest-input">Destination:</label>
+    <input type="text" name="destination" required>
+    <button type="submit">Add New Destination</button>
+  </form>
 </main>
 
 
