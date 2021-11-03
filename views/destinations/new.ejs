@@ -1,0 +1,21 @@
+<%- include("../partials/header") %> 
+
+<link rel="stylesheet" href="">
+
+<%- include("../partials/nav") %> 
+
+<main>
+  <h1>Destinations</h1>
+  <p>Check to see if the destination is in the dropdown before adding
+    <select>
+      <% destinations.forEach(function(destination) { %> 
+      <option><%= destination.airport %> </option>
+    <% }) %> 
+    </select>
+  </p>
+</main>
+
+
+
+
+<%- include("../partials/footer")  %> 

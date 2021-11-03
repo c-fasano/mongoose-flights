@@ -25,8 +25,8 @@
     <label for="tickets"></label>
     <!--<textarea name="tickets" id="tickets" cols="5" rows="1" placeholder="Seat"></textarea>
     <textarea name="tickets" id="tickets" cols="5" rows="1" placeholder="Price"></textarea> -->
-    <input type="text" value="/[A-F][1-9]\d?/">]
-    <input type="number" id="price" min="0" max="999">
+    <input type="text" name="seat" pattern="[A-F][1-9]\d?">
+    <input type="number" name="price" min="0" max="999">
     <button type="submit">Add Ticket</button>
   </form>
   <% if (flight.tickets.length) { %>
