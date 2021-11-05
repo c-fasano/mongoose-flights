@@ -12,7 +12,18 @@
     <div>FlightNo:&emsp;<%= flight.flightNo %></div>
     <div>Departs:&emsp;<%= flight.departs %> </div>
   </section>
-  <h2>Tickets</h2>
+  <h3>Destinations</h3>
+  <ul>
+    <%- flight.destinations.map(dest => `<li>${dest.airport}</li>`).join("") %>
+  </ul>
+  </section>
+    <form id="add-destination" action="/flights/<%=flight._id%>/destinations" method="POST">
+      <select name="destinationId"> 
+        <%- destinations.map(dest => `<option value="${dest._id}">${dest.airport}</option>`).join('') %>
+      </select>
+      <button type="submit">Add Destination</button>
+    </form>
+  <h3>Tickets</h3>
   <form
     id="add-ticket"
     action="/flights/<%= flight._id %>/tickets"
